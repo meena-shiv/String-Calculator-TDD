@@ -26,3 +26,7 @@ def test_add_negative_numbers():
         assert str(e) == "negative numbers not allowed -2, -3"
     else:
         pytest.fail("ValueError not raised")
+
+def test_ignore_numbers_greater_than_1000():
+    assert add("2,1001") == 2
+    assert add("1000,999,1001") == 1999
