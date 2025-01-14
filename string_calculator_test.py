@@ -8,3 +8,6 @@ def test_add_single_number():
 
 def test_add_two_numbers():
     assert add("1,2") == 3
+
+def test_add_multiple_numbers():
+    assert add("1,2,3,4,5") == 15
