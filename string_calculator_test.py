@@ -39,3 +39,6 @@ def test_multiple_custom_delimiters():
     assert add("//[*][%]\n1*2%3") == 6
     assert add("//[+][-]\n4+5-6") == 15
 
+def test_multiple_delimiters_with_length():
+    assert add("//[***][%%]\n1***2%%3") == 6
+    assert add("//[+++][===]\n4+++5===6") == 15
