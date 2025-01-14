@@ -1,3 +1,4 @@
+import pytest
 from string_calculator import add
 
 def test_add_empty_string():
@@ -17,3 +18,11 @@ def test_add_newline_delimiters():
 
 def test_add_custom_delimiter():
     assert add("//;\n1;2") == 3
+
+def test_add_negative_numbers():
+    try:
+        add("1,-2,3,-3")
+    except ValueError as e:
+        assert str(e) == "negative numbers not allowed -2, -3"
+    else:
+        pytest.fail("ValueError not raised")
